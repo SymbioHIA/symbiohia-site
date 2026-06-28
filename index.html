@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="SymbioHIA — consultoría de IA para medianas empresas con enfoque humano, práctico y medible.">
+  <meta name="keywords" content="IA, automatización, productividad, consultoría, procesos, medianas empresas">
+  <title>SymbioHIA | Simbiosis humano + IA</title>
+
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600">
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/fonts/themify-icons.css">
+  <link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.css">
+  <link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/menu.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    :root {
+      --symbio-green: #5a7232;
+      --symbio-teal: #1e5f6e;
+      --symbio-dark: #08141a;
+      --symbio-surface: rgba(8, 18, 25, 0.82);
+      --symbio-soft: #dbe9ee;
+      --symbio-line: rgba(255,255,255,0.12);
+    }
+
+    body {
+      background: linear-gradient(135deg, #06111a 0%, #0b1d26 45%, #102a35 100%);
+      color: #eff7fb;
+    }
+
+    .site-navbar {
+      background: rgba(6, 17, 26, 0.9);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .site-logo a {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .site-logo .brand-symbio {
+      color: #9fd36d;
+      font-size: 1.15rem;
+    }
+
+    .site-logo .brand-divider {
+      color: rgba(255,255,255,0.55);
+      font-size: 1rem;
+    }
+
+    .site-logo .brand-hia {
+      color: #9fe1cb;
+      font-size: 1.15rem;
+    }
+
+    .site-logo img {
+      max-height: 42px;
+    }
+
+    .home_bg {
+      background-image:
+        linear-gradient(135deg, rgba(6,17,26,0.88) 0%, rgba(8,18,25,0.76) 45%, rgba(14,33,42,0.88) 100%),
+        url('assets/img/bg/home-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-text h2 {
+      font-size: 3rem;
+      line-height: 1.15;
+      text-transform: none;
+      margin-bottom: 18px;
+      color: #eff7fb;
+    }
+
+    .hero-text p {
+      color: #dbe9ee;
+      max-width: 700px;
+      margin: 0 auto 24px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .hero-text .btn-group a,
+    .hero-text .btn-group button {
+      margin: 0 6px;
+    }
+
+    .hero-text .btn_one,
+    .hero-text .btn_two {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .hero-text .btn_one {
+      background: linear-gradient(135deg, var(--symbio-teal), #0a6b7d);
+      color: #eff7fb;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-text .btn_two {
+      background: rgba(255,255,255,0.04);
+      color: #eff7fb;
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .section-title h2 {
+      color: #eff7fb;
+    }
+
+    .section-title p {
+      color: #dbe9ee;
+    }
+
+    .single_feature,
+    .single_why_choose,
+    .single-project,
+    .single_service_box,
+    .contact-box,
+    .pricing-table,
+    .blog-single {
+      background: var(--symbio-surface);
+      border: 1px solid var(--symbio-line);
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+      color: #eff7fb;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow: visible;
+    }
+
+    .single_feature {
+      min-height: 180px;
+      height: auto;
+      padding: 18px;
+    }
+
+    .single-project {
+      min-height: 170px;
+      height: auto;
+      padding: 18px;
+    }
+
+    .single_why_choose {
+      min-height: 220px;
+      height: auto;
+      padding: 22px;
+    }
+
+    .row.feature_bg,
+    .counter_feature .row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
+    .feature_bg .col-lg-4,
+    .feature_bg .col-sm-6,
+    .feature_bg .col-xs-12,
+    .counter_feature .col-lg-3,
+    .counter_feature .col-sm-6,
+    .counter_feature .col-xs-12 {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .single_feature h4,
+    .single_why_choose h2,
+    .single_why_choose h4,
+    .single_service_box h4,
+    .pricing-table h4,
+    .blog-single h4 {
+      color: #eff7fb;
+    }
+
+    #services .single_feature:hover {
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      transform: translateY(-3px);
+    }
+
+    #services .single_feature:hover h4,
+    #services .single_feature:hover p {
+      color: #0a1720;
+    }
+
+    #method .single_feature:hover {
+      background: var(--symbio-surface);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+      transform: none;
+    }
+
+    #method .single_feature:hover h4,
+    #method .single_feature:hover p {
+      color: #eff7fb;
+    }
+
+    .single_feature p,
+    .single_why_choose p,
+    .single_service_box p,
+    .blog-single p,
+    .pricing-table p,
+    .single-project h4 {
+      color: #dfeaf0;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .single-project h2.counter-num {
+      color: #9fe1cb;
+    }
+
+    .feature_area,
+    .why_choose_area,
+    .pricing_area,
+    .contact_area,
+    .footer_area {
+      background: transparent;
+    }
+
+    .feature_bg,
+    .pricing-table,
+    .contact-box,
+    .blog-single,
+    .single_why_choose_img img {
+      background: transparent;
+    }
+
+    .small-label {
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.78rem;
+      color: #9fe1cb;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .pill-list span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #eff7fb;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.92rem;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, rgba(13, 33, 42, 0.92), rgba(6, 17, 26, 0.98));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.24);
+    }
+
+    .cta-box input {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #eff7fb;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+
+    .cta-box input::placeholder { color: #c8dbe2; }
+
+    .cta-box .btn_one {
+      border-radius: 12px;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #5a7232, #7ba150);
+      color: #eff7fb;
+      border: none;
+    }
+  </style>
+</head>
+
+<body data-spy="scroll" data-offset="80">
+  <div class="preloader">
+    <div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>
+  </div>
+
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3"><span class="icon-close2 js-menu-toggle"></span></div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+  <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-6 col-xl-2">
+          <h1 class="mb-0 site-logo">
+            <a href="index.html" aria-label="SymbioHIA">
+              <span class="brand-symbio">SYMBIO</span>
+              <span class="brand-divider">|</span>
+              <span class="brand-hia">HIA</span>
+            </a>
+          </h1>
+        </div>
+        <div class="col-12 col-md-10 d-none d-xl-block">
+          <nav class="site-navigation position-relative text-right" role="navigation">
+            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+              <li><a class="nav-link" href="#home">Inicio</a></li>
+              <li><a class="nav-link" href="#services">Servicios</a></li>
+              <li><a class="nav-link" href="#about">¿Para quién?</a></li>
+              <li><a class="nav-link" href="#method">Metodología</a></li>
+              <li><a class="nav-link" href="#contact">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;">
+          <a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="home_bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="hero-text wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+            <span class="small-label">Simbiosis experiencia + IA</span>
+            <h2>Adopción de inteligencia artifical (IA) como solución a las oportunidades de mejora de tus procesos de negocio</h2>
+            <p>Las empresas tienen problemas reales que la IA puede resolver hoy. El obstáculo no es la tecnología, sino saber dónde y cómo aplicarla sin perder lo más valioso: la experiencia y sensibilidad humana.</p>
+            <div class="btn-group">
+              <a class="btn_one" href="#contact">Hablemos</a>
+              <a class="btn_two" href="#services">Ver servicios</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature_area section-padding" id="services">
+    <div class="container">
+      <div class="row feature_bg">
+        <div class="section-title text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+          <h2 style="text-transform: none;">Servicios que ofrecemos</h2>
+          <p>Diagnóstico, diseño y adopción de IA para la transformación digital de tu negocio</p>
+        </div>
+        <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+          <div class="single_feature">
+            <img src="assets/img/icon/research.png" alt="icon">
+            <h4>Diagnóstico de oportunidades</h4>
+            <p>Identificamos qué procesos generan más valor con IA antes de invertir recursos en tecnología.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+          <div class="single_feature">
+            <img src="assets/img/icon/brand.png" alt="icon">
+            <h4>Desarrollo a medida</h4>
+            <p>Construimos soluciones que se ajustan a tus sistemas actuales y potencian lo que ya funciona.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+          <div class="single_feature">
+            <img src="assets/img/icon/web.png" alt="icon">
+            <h4>Integración de la IA a tu equipo</h4>
+            <p>Acompañamos el cambio cultural para que tu equipo trabaje mejor con IA.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="counter_feature section-padding">
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-stretch text-center">
+      
+      <div class="col-lg-3 col-sm-6 col-xs-12 mb-4 mb-lg-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+        <div class="single-project h-100 d-flex flex-column align-items-center justify-content-start" style="padding: 20px;">
+          <img src="assets/img/icon/counter-1.png" alt="icon" style="margin-bottom: 15px;">
+          <h2 class="counter-num" style="margin-bottom: 10px;">85%</h2>
+          <h4>de medianas empresas teme perder ventaja competitiva si no adopta IA</h4>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6 col-xs-12 mb-4 mb-lg-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+        <div class="single-project h-100 d-flex flex-column align-items-center justify-content-start" style="padding: 20px;">
+          <img src="assets/img/icon/counter-2.png" alt="icon" style="margin-bottom: 15px;">
+          <h2 class="counter-num" style="margin-bottom: 10px;">32%</h2>
+          <h4>CAGR de adopción de IA en pymes y medianas</h4>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6 col-xs-12 mb-4 mb-sm-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+        <div class="single-project h-100 d-flex flex-column align-items-center justify-content-start" style="padding: 20px;">
+          <img src="assets/img/icon/counter-3.png" alt="icon" style="margin-bottom: 15px;">
+          <h2 class="counter-num" style="margin-bottom: 10px;">48%</h2>
+          <h4>aún evalúan viabilidad y necesitan una ruta clara</h4>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+        <div class="single-project h-100 d-flex flex-column align-items-center justify-content-start" style="padding: 20px;">
+          <img src="assets/img/icon/counter-4.png" alt="icon" style="margin-bottom: 15px;">
+          <h2 class="counter-num" style="margin-bottom: 10px;">4.7%</h2>
+          <h4>incremento promedio de productividad en los primeros 2 años</h4>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <section class="why_choose_area section-padding" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+          <div class="single_why_choose">
+            <span class="small-label">¿Para quién?</span>
+            <h2>Medianas empresas con problemas reales</h2>
+            <p>Empresas de 10 a 300 personas que ya tienen procesos, datos y equipos, pero no cuentan con un equipo de IA propio ni el tiempo para construirlo desde cero. Aquí la IA no reemplaza a la gente: la potencia.</p>
+            <div class="pill-list">
+              <span>Industria y manufactura</span>
+              <span>Retail y e-commerce</span>
+              <span>Servicios financieros</span>
+              <span>Logística</span>
+              <span>Salud</span>
+              <span>Agroindustria</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+          <div class="single_why_choose_img text-center">
+            <img src="assets/img/home-office.png" class="img-fluid" alt="SymbioHIA">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature_area section-padding" id="method">
+    <div class="container">
+      <div class="row feature_bg">
+        <div class="section-title text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+          <h2 style="text-transform: none;">El Arte de Cooperar</h2>
+          <p>Creemos en una IA que trabaja al servicio del talento humano, amplificando nuestras capacidades más valiosas: decidir, crear y conectar.</p>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+          <div class="single_feature">
+            <h4>El factor humano</h4>
+            <p>Aporta el liderazgo y lo que la tecnología no puede replicar: el criterio estratégico, la intuición, los valores y esa sensibilidad única para gestionar relaciones y entender el contexto del negocio.</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+          <div class="single_feature">
+            <h4>La Potencia Tecnológica</h4>
+            <p>Aporta el motor operativo: la capacidad de procesar datos a gran escala, la automatización fluida de tareas repetitivas y un análisis predictivo constante gracias a su disponibilidad absoluta.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact_area section-padding" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="cta-box wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+            <div class="row align-items-center">
+              <div class="col-lg-8 mb-3 mb-lg-0">
+                <span class="small-label">Tu próximo paso</span>
+                <h3 style="color:#eff7fb; margin-bottom:10px;">¿Tu empresa está en ese 85%?</h3>
+                <p style="color:#dfeaf0;">Contanos cuál es tu mayor desafío operativo y te mostramos cómo la IA puede ayudar a darle una solución, sin tecnicismos.</p>
+              </div>
+              <div class="col-lg-4">
+                <form class="d-flex flex-column gap-2" onsubmit="event.preventDefault(); window.location.href='mailto:contacto@symbiohia.com?subject=SymbioHIA%20-%20Consulta%20de%20index';">
+                  <input type="email" placeholder="tu@empresa.com" required>
+                  <button type="submit" class="btn_one">Hablemos</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer_area section-padding">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-left">
+          <p style="color:#dbe9ee; margin-bottom:0;">© 2025 SymbioHIA · Buenos Aires, Argentina</p>
+        </div>
+        <div class="col-md-6 text-center text-md-right">
+          <p style="color:#c1d8df; margin-bottom:0;">LinkedIn · contacto@symbiohia.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+  <script src="assets/js/jquery.sticky.js"></script>
+  <script src="assets/js/jquery.appear.js"></script>
+  <script src="assets/js/jquery.inview.min.js"></script>
+  <script src="assets/js/jquery.mixitup.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/owlcarousel/js/owl.carousel.min.js"></script>
+  <script src="assets/js/jquery.stellar.min.js"></script>
+  <script src="assets/js/scrolltopcontrol.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/scripts.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+</body>
+</html>
