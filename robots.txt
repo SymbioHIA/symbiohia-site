@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://symbiohia.com.ar/sitemap.xml
