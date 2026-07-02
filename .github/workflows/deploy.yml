@@ -1,0 +1,22 @@
+name: Despliegue Automatico SymbioHIA
+
+on:
+  push:
+    branches:
+      - main  # Se activa automáticamente cuando subís cambios a la rama 'main'
+
+jobs:
+  web-deploy:
+    name: Sincronizar con WNPower
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Descargar codigo del repositorio
+      uses: actions/checkout@v4
+
+    - name: 🚀 Subir archivos via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: ./public_html/  # Carpeta del hosting donde se inyecta la web
