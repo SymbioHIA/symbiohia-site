@@ -144,16 +144,17 @@
     .contact-box,
     .pricing-table,
     .blog-single {
-      background: var(--symbio-surface);
-      border: 1px solid var(--symbio-line);
-      border-radius: 18px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+      background: linear-gradient(145deg, rgba(10,24,32,0.95), rgba(8,19,27,0.82));
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 22px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.36), inset 0 1px 0 rgba(255,255,255,0.06);
       color: #eff7fb;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       overflow: visible;
+      position: relative;
     }
 
     .single_feature {
@@ -162,11 +163,67 @@
       padding: 18px;
     }
 
+    .service-icon,
+    .metric-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      margin-bottom: 14px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(159,227,203,0.2), rgba(90,114,50,0.24));
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #9fe1cb;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.06);
+      flex-shrink: 0;
+    }
+
+    .service-media {
+      margin-bottom: 16px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+    }
+
+    .service-media img {
+      display: block;
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .service-icon svg,
+    .metric-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .metric-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 12px;
+      border-radius: 14px;
+    }
+
+    .metric-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
     .single-project {
       min-height: 170px;
       height: auto;
       padding: 18px;
     }
+
 
     .single_why_choose {
       min-height: 220px;
@@ -198,17 +255,31 @@
     .pricing-table h4,
     .blog-single h4 {
       color: #eff7fb;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .single_feature p,
+    .single-project h4 {
+      line-height: 1.7;
+      font-size: 0.97rem;
     }
 
     #services .single_feature:hover {
-      background: rgba(255,255,255,0.95);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-      transform: translateY(-3px);
+      background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(219,233,238,0.92));
+      box-shadow: 0 26px 70px rgba(0,0,0,0.4);
+      transform: translateY(-4px);
     }
 
     #services .single_feature:hover h4,
     #services .single_feature:hover p {
       color: #0a1720;
+    }
+
+    #services .single_feature:hover .service-icon {
+      background: linear-gradient(135deg, rgba(31,95,110,0.2), rgba(90,114,50,0.24));
+      color: #1e5f6e;
+      border-color: rgba(30,95,110,0.18);
     }
 
     #method .single_feature:hover {
@@ -235,6 +306,20 @@
 
     .single-project h2.counter-num {
       color: #9fe1cb;
+    }
+
+    .metric-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.78rem;
+      color: #9fe1cb;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: rgba(159,225,203,0.45);
+    }
+
+    .metric-link:hover {
+      color: #eff7fb;
     }
 
     .feature_area,
@@ -378,21 +463,27 @@
         </div>
         <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
           <div class="single_feature">
-            <img src="assets/img/icon/research.png" alt="icon">
+            <div class="service-media">
+              <img src="https://plus.unsplash.com/premium_photo-1661778490723-371305b4fb06?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Equipo reunido analizando oportunidades de negocio" loading="lazy">
+            </div>
             <h4>Diagnóstico de oportunidades</h4>
             <p>Identificamos qué procesos generan más valor con IA antes de invertir recursos en tecnología.</p>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
           <div class="single_feature">
-            <img src="assets/img/icon/brand.png" alt="icon">
+            <div class="service-media">
+              <img src="https://plus.unsplash.com/premium_photo-1661288557343-c17f44818869?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Equipo de negocio trabajando en una estrategia compartida" loading="lazy">
+            </div>
             <h4>Desarrollo a medida</h4>
             <p>Construimos soluciones que se ajustan a tus sistemas actuales y potencian lo que ya funciona.</p>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
           <div class="single_feature">
-            <img src="assets/img/icon/web.png" alt="icon">
+            <div class="service-media">
+              <img src="https://plus.unsplash.com/premium_photo-1664474834472-6c7d1e3198e2?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Equipo colaborando con tecnología e inteligencia artificial" loading="lazy">
+            </div>
             <h4>Integración de la IA a tu equipo</h4>
             <p>Acompañamos el cambio cultural para que tu equipo trabaje mejor con IA.</p>
           </div>
@@ -407,33 +498,65 @@
       
       <div class="col-lg-3 col-sm-6 col-xs-12 mb-4 mb-lg-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
         <div class="single-project h-100 d-flex flex-column align-items-center justify-content-start" style="padding: 20px;">
-          <img src="assets/img/icon/counter-1.png" alt="icon" style="margin-bottom: 15px;">
-          <h2 class="counter-num" style="margin-bottom: 10px;">85%</h2>
-          <h4>de medianas empresas teme perder ventaja competitiva si no adopta IA</h4>
+          <div class="metric-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 17l4-4 3 3 5-6 4 4"></path>
+              <path d="M20 8h-4"></path>
+              <path d="M16 8V4"></path>
+            </svg>
+          </div>
+          <h2 class="counter-num" style="margin-bottom: 10px;">75%</h2>
+          <h4>de los trabajadores de conocimiento ya usan IA en el trabajo</h4>
+          <a class="metric-link" href="https://www.microsoft.com/en-us/worklab/work-trend-index/2024" target="_blank" rel="noopener noreferrer">Microsoft · Work Trend Index 2024</a>
+
         </div>
       </div>
 
       <div class="col-lg-3 col-sm-6 col-xs-12 mb-4 mb-lg-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
         <div class="single-project h-100 d-flex flex-column align-items-center justify-content-start" style="padding: 20px;">
-          <img src="assets/img/icon/counter-2.png" alt="icon" style="margin-bottom: 15px;">
-          <h2 class="counter-num" style="margin-bottom: 10px;">32%</h2>
-          <h4>CAGR de adopción de IA en pymes y medianas</h4>
+          <div class="metric-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="8"></circle>
+              <path d="M12 8v4l3 2"></path>
+            </svg>
+          </div>
+          <h2 class="counter-num" style="margin-bottom: 10px;">44%</h2>
+          <h4>de las habilidades principales de los trabajadores cambiarán en los próximos años</h4>
+          <a class="metric-link" href="https://www.weforum.org/publications/the-future-of-jobs-report-2023/" target="_blank" rel="noopener noreferrer">World Economic Forum · Future of Jobs Report 2023</a>
+
         </div>
       </div>
 
       <div class="col-lg-3 col-sm-6 col-xs-12 mb-4 mb-sm-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
         <div class="single-project h-100 d-flex flex-column align-items-center justify-content-start" style="padding: 20px;">
-          <img src="assets/img/icon/counter-3.png" alt="icon" style="margin-bottom: 15px;">
-          <h2 class="counter-num" style="margin-bottom: 10px;">48%</h2>
-          <h4>aún evalúan viabilidad y necesitan una ruta clara</h4>
+          <div class="metric-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M6 20V10"></path>
+              <path d="M12 20V4"></path>
+              <path d="M18 20v-6"></path>
+            </svg>
+          </div>
+          <h2 class="counter-num" style="margin-bottom: 10px;">60%</h2>
+          <h4>de los trabajadores necesitarán formación adicional para adaptarse a la IA</h4>
+          <a class="metric-link" href="https://www.weforum.org/publications/the-future-of-jobs-report-2023/" target="_blank" rel="noopener noreferrer">World Economic Forum · Future of Jobs Report 2023</a>
+
         </div>
       </div>
 
       <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
         <div class="single-project h-100 d-flex flex-column align-items-center justify-content-start" style="padding: 20px;">
-          <img src="assets/img/icon/counter-4.png" alt="icon" style="margin-bottom: 15px;">
-          <h2 class="counter-num" style="margin-bottom: 10px;">4.7%</h2>
-          <h4>incremento promedio de productividad en los primeros 2 años</h4>
+          <div class="metric-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 19h16"></path>
+              <path d="M7 16V9"></path>
+              <path d="M12 16V5"></path>
+              <path d="M17 16v-3"></path>
+            </svg>
+          </div>
+          <h2 class="counter-num" style="margin-bottom: 10px;">69M / 83M</h2>
+          <h4>trabajos se crearán y se eliminarán a nivel global en los próximos años por la transformación digital</h4>
+          <a class="metric-link" href="https://www.weforum.org/publications/the-future-of-jobs-report-2023/" target="_blank" rel="noopener noreferrer">World Economic Forum · Future of Jobs Report 2023</a>
+
         </div>
       </div>
 
