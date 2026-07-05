@@ -503,9 +503,15 @@
                 <p style="color:#dfeaf0;">Contanos cuál es tu mayor desafío operativo y te mostramos cómo la IA puede ayudar a darle una solución, sin tecnicismos.</p>
               </div>
               <div class="col-lg-4">
-                <form class="d-flex flex-column gap-2" onsubmit="event.preventDefault(); window.location.href='mailto:contacto@symbiohia.com?subject=SymbioHIA%20-%20Consulta%20de%20index';">
-                  <input type="email" placeholder="tu@empresa.com" required>
+                <form class="d-flex flex-column gap-2" id="contact-form" action="contact.php" method="post">
+                  <input type="text" name="nombre" placeholder="Tu nombre" required>
+                  <input type="email" name="email" placeholder="tu@empresa.com" required>
+                  <input type="text" name="empresa" placeholder="Empresa (opcional)">
+                  <textarea name="mensaje" rows="4" placeholder="Contanos tu desafío operativo" required></textarea>
+                  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
                   <button type="submit" class="btn_one">Hablemos</button>
+                  <small style="color:#dfeaf0; line-height:1.4;">Tus datos se usarán únicamente para responder tu consulta y se resguardan con confidencialidad.</small>
+                  <div id="contact-response" aria-live="polite" style="color:#eff7fb; font-size:0.95rem;"></div>
                 </form>
               </div>
             </div>
@@ -522,12 +528,44 @@
           <p style="color:#dbe9ee; margin-bottom:0;">© 2026 SymbioHIA · Buenos Aires, Argentina</p>
         </div>
         <div class="col-md-6 text-center text-md-right">
-          <p style="color:#c1d8df; margin-bottom:0;">LinkedIn · <a href="mailto:info@symbiohia.com.ar" style="color:#c1d8df; text-decoration:none;">info@symbiohia.com.ar</a></p>
+          <p style="color:#c1d8df; margin-bottom:0;">LinkedIn · <a href="mailto:contacto@symbiohia.com.ar" style="color:#c1d8df; text-decoration:none;">contacto@symbiohia.com.ar</a></p>
         </div>
       </div>
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contact-form');
+      const responseBox = document.getElementById('contact-response');
+      if (!form || !responseBox) return;
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        responseBox.textContent = 'Enviando tu consulta...';
+
+        fetch('contact.php', {
+          method: 'POST',
+          body: formData
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (result) {
+            if (result.success) {
+              responseBox.textContent = result.message;
+              form.reset();
+            } else {
+              responseBox.textContent = result.message || 'No pudimos enviar tu consulta. Inténtalo nuevamente.';
+            }
+          })
+          .catch(function () {
+            responseBox.textContent = 'No pudimos enviar tu consulta. Inténtalo nuevamente.';
+          });
+      });
+    });
+  </script>
   <script src="assets/js/jquery-1.12.4.min.js"></script>
   <script src="assets/js/jquery.sticky.js"></script>
   <script src="assets/js/jquery.appear.js"></script>
